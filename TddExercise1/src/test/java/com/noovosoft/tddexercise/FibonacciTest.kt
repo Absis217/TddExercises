@@ -19,12 +19,28 @@ internal class HelloTest {
                         Arguments.of(-1, -8),
                         Arguments.of(34, 9)
                 )
+
+        @JvmStatic
+        fun `provide input to recursive fibonacci`(): Stream<Arguments> =
+                Stream.of(
+                        Arguments.of(0, 0),
+                        Arguments.of(1, 1),
+                        Arguments.of(1, 2),
+                        Arguments.of(8, 6),
+                        Arguments.of(0, -9)
+                )
     }
 
     @ParameterizedTest
     @MethodSource("provide input to fibonacciIterative test")
     fun `give Input to Fibonacci function`(expected: Int, inputNumber: Int) {
-        assertEquals(expected, fibonacci(inputNumber) )
+        assertEquals(expected, fibonacciIterative(inputNumber) )
+    }
+
+    @ParameterizedTest
+    @MethodSource("provide input to recursive fibonacci")
+    fun `input given to Fibonacci Recursive`(expected: Int, inputToFib: Int) {
+        assertEquals(expected, fibonacciRecursive(inputToFib))
     }
 }
 

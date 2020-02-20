@@ -12,13 +12,18 @@ internal class PrimeFactorialtest {
         @JvmStatic
         fun `provide test cases to primeFactorialTest`(): Stream<Arguments> =
                 Stream.of(
-                        Arguments.of(2)
+                        Arguments.of(mutableListOf(-1), 0),
+                        Arguments.of(mutableListOf(-1), -7),
+                        Arguments.of(mutableListOf(2), 2),
+                        Arguments.of(mutableListOf(2,3), 6),
+                        Arguments.of(mutableListOf(2, 2, 3), 12),
+                        Arguments.of(mutableListOf(5, 5, 7, 13), 2275 )
                 )
     }
 
     @ParameterizedTest
     @MethodSource("provide test cases to primeFactorialTest")
-    fun `Input given to primeFactorial function is 1`() {
-
+    fun `Input given to primeFactorial function is 1`(expected: List<Int>, inputNumber: Int) {
+        assertEquals(expected, primeFactorial(inputNumber))
     }
 }
