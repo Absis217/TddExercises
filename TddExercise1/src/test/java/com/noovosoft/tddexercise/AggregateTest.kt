@@ -11,7 +11,7 @@ internal class AggregateTest {
     @MethodSource("provide input to Aggregate Function")
     fun `Aggregate function to calculate min max count average`( expected: Map<String,Number>, input: List<Int> ){
 
-        assertEquals(expected, Aggregate(input))
+        assertEquals(expected, aggregate(input))
     }
 
     companion object {
