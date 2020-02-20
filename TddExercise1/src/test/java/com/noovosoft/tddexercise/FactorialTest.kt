@@ -7,21 +7,22 @@ import java.util.stream.Stream
 import kotlin.test.assertEquals
 
 internal class FactorialTest {
-    companion object {
-        @JvmStatic
-        fun `factorial of given number`(): Stream<Arguments> =
-                Stream.of(
-                        Arguments.of(-5, -1),
-                        Arguments.of(-87, -1),
-                        Arguments.of(0, 1),
-                        Arguments.of(9, 362880),
-                        Arguments.of(6, 720)
-                )
-    }
 
     @ParameterizedTest
-    @MethodSource("factorial of given number")
-    fun `factorial Of Given Input`(testInputNumber: Int, expected: Int) {
+    @MethodSource("provide arguments to factorial test case")
+    fun `factorial Of given Input`(expected: Int, testInputNumber: Int) {
         assertEquals(expected, factorial(testInputNumber))
+    }
+
+    companion object {
+        @JvmStatic
+        fun `provide arguments to factorial test case`(): Stream<Arguments> =
+                Stream.of(
+                        Arguments.of(-1, -5),
+                        Arguments.of(-1, -87),
+                        Arguments.of(1, 0),
+                        Arguments.of(362880, 9),
+                        Arguments.of(720, 6)
+                )
     }
 }

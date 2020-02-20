@@ -13,11 +13,12 @@ internal class HelloTest {
         fun `provide input to fibonacciIterative test`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(-1, 0),
-                        Arguments.of(1, 1),
+                        Arguments.of(0, 1),
                         Arguments.of(1, 2),
-                        Arguments.of(8, 6),
+                        Arguments.of(1, 3),
+                        Arguments.of(8, 7),
                         Arguments.of(-1, -8),
-                        Arguments.of(34, 9)
+                        Arguments.of(34, 10)
                 )
 
         @JvmStatic

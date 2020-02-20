@@ -3,28 +3,27 @@ package com.noovosoft.tddexercise
 import kotlin.math.round
 
 fun minimum(input: List<Int>): Int {
-    return input.sorted().first()
+    return input.min()!!
 }
 
 fun maximum(input: List<Int>): Int {
-    return input.sorted().last()
+    return input.max()!!
 }
 
 fun count(input: List<Int>): Int {
     return input.size
 }
 
-fun listAverage(input: List<Int>): Double {
+fun averageOfList(input: List<Int>): Double {
     return (round(input.average() * 100) / 100)
 }
 
-fun aggregate(args: List<Int>): Map<String, Number> {
-    var arguments = mutableListOf<Int>()
-    var result = mutableMapOf<String, Number>()
-    args.forEach { arguments.add(it) }
-    result.set("Min", minimum(arguments))
-    result.set("Max", maximum(arguments))
-    result.set("Count", count(arguments))
-    result.set("Average", listAverage(arguments))
+fun aggregate(inputList: List<Int>): Map<String, Number> {
+    val result = mutableMapOf<String, Number>(
+            "Min" to minimum(inputList),
+            "Max" to maximum(inputList),
+            "Count" to count(inputList),
+            "Average" to averageOfList(inputList)
+    )
     return result
 }

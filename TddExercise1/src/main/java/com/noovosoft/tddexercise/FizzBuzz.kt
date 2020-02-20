@@ -1,7 +1,7 @@
 package com.noovosoft.tddexercise
 
 fun fizzBuzz(number: Int): String {
-    var output: String = ""
+    var output = ""
     if (number % 3 == 0) {
         output = output.plus("Fizz")
     }

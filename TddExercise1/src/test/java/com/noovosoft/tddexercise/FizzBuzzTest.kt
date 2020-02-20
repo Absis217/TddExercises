@@ -8,6 +8,12 @@ import kotlin.test.assertEquals
 
 internal class FizzBuzzTest {
 
+    @ParameterizedTest
+    @MethodSource("provide input to FizzBuzz function")
+    fun `Input given to FizBuzz function`(expected: String, inputToFizzBuzz: Int) {
+        assertEquals(expected, fizzBuzz(inputToFizzBuzz))
+    }
+
     companion object {
         @JvmStatic
         fun `provide input to FizzBuzz function`(): Stream<Arguments> =
@@ -16,13 +22,9 @@ internal class FizzBuzzTest {
                         Arguments.of("Fizz", 6),
                         Arguments.of("Buzz", 10),
                         Arguments.of("7", 7),
-                        Arguments.of("FizzBuzz", 15)
+                        Arguments.of("FizzBuzz", -15),
+                        Arguments.of("FizzBuzz", 120),
+                        Arguments.of("98", 98)
                 )
-    }
-
-    @ParameterizedTest
-    @MethodSource("provide input to FizzBuzz function")
-    fun `Input given to FizBuzz function`(expected: String, inputToFizzBuzz: Int) {
-        assertEquals(expected, fizzBuzz(inputToFizzBuzz))
     }
 }
