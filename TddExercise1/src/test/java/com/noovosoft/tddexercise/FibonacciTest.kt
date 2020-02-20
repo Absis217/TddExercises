@@ -8,6 +8,18 @@ import kotlin.test.assertEquals
 
 internal class HelloTest {
 
+    @ParameterizedTest
+    @MethodSource("provide input to fibonacciIterative test")
+    fun `give Input to Fibonacci function`(expected: Int, inputNumber: Int) {
+        assertEquals(expected, fibonacciIterative(inputNumber) )
+    }
+
+    @ParameterizedTest
+    @MethodSource("provide input to recursive fibonacci")
+    fun `input given to Fibonacci Recursive`(expected: Int, inputToFib: Int) {
+        assertEquals(expected, fibonacciRecursive(inputToFib))
+    }
+
     companion object {
         @JvmStatic
         fun `provide input to fibonacciIterative test`(): Stream<Arguments> =
@@ -30,18 +42,6 @@ internal class HelloTest {
                         Arguments.of(8, 6),
                         Arguments.of(0, -9)
                 )
-    }
-
-    @ParameterizedTest
-    @MethodSource("provide input to fibonacciIterative test")
-    fun `give Input to Fibonacci function`(expected: Int, inputNumber: Int) {
-        assertEquals(expected, fibonacciIterative(inputNumber) )
-    }
-
-    @ParameterizedTest
-    @MethodSource("provide input to recursive fibonacci")
-    fun `input given to Fibonacci Recursive`(expected: Int, inputToFib: Int) {
-        assertEquals(expected, fibonacciRecursive(inputToFib))
     }
 }
 

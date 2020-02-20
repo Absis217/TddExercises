@@ -19,11 +19,10 @@ fun averageOfList(input: List<Int>): Double {
 }
 
 fun aggregate(inputList: List<Int>): Map<String, Number> {
-    val result = mutableMapOf<String, Number>(
+    return mutableMapOf(
             "Min" to minimum(inputList),
             "Max" to maximum(inputList),
             "Count" to count(inputList),
             "Average" to averageOfList(inputList)
     )
-    return result
 }
