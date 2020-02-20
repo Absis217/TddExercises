@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class AggregateTest {
 
     @ParameterizedTest
-    @MethodSource("give different number of inputs to Aggregate function test case")
+    @MethodSource("Give different number of inputs to Aggregate function test case")
     fun `Aggregate function to calculate min max count average`(expected: Map<String, Number>, input: List<Int>) {
         assertEquals(expected, aggregate(input))
     }
 
     companion object {
         @JvmStatic
-        fun `give different number of inputs to Aggregate function test case`(): Stream<Arguments> =
+        fun `Give different number of inputs to Aggregate function test case`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(mutableMapOf("Min" to 0, "Max" to 0, "Count" to 1, "Average" to 0.0), mutableListOf(0)),
                         Arguments.of(mutableMapOf("Min" to 3, "Max" to 8, "Count" to 3, "Average" to 5.67), mutableListOf(3, 6, 8)),

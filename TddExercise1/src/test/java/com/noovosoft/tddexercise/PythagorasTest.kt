@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class PythagorasTest {
 
     @ParameterizedTest
-    @MethodSource("provide input to pythagorasTest")
-    fun `test Pythagoras function with provided input test cases`(expected: Double, sideOne: Double, sideTwo: Double) {
+    @MethodSource("Provide input to pythagorasTest")
+    fun `Test Pythagoras function with provided input test cases`(expected: Double, sideOne: Double, sideTwo: Double) {
         assertEquals(expected, pythagoras(sideOne, sideTwo))
     }
 
     companion object {
         @JvmStatic
-        fun `provide input to pythagorasTest`(): Stream<Arguments> =
+        fun `Provide input to pythagorasTest`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(0.0, 0.0, 0.0),
                         Arguments.of(0.0, 0.0, 10.0),

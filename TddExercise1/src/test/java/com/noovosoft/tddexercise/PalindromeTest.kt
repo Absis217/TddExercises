@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class PalindromeTest {
 
     @ParameterizedTest
-    @MethodSource("provide test cases to Palindrome Test function")
-    fun `input test arguments to Palindrome`(expected: Boolean, inputString: String) {
+    @MethodSource("Provide test cases to Palindrome Test function")
+    fun `Input test arguments to Palindrome`(expected: Boolean, inputString: String) {
         assertEquals(expected, isPalindrome(inputString))
     }
 
     companion object {
         @JvmStatic
-        fun `provide test cases to Palindrome Test function`(): Stream<Arguments> =
+        fun `Provide test cases to Palindrome Test function`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(true, ""),
                         Arguments.of(true, "a"),

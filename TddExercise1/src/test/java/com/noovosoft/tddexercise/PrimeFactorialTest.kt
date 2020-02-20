@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class PrimeFactorialTest {
 
     @ParameterizedTest
-    @MethodSource("provide test cases to primeFactorialTest")
-    fun `input test cases to primeFactorial function`(expected: List<Int>, inputNumber: Int) {
+    @MethodSource("Provide test cases to primeFactorialTest")
+    fun `Input test cases to primeFactorial function`(expected: List<Int>, inputNumber: Int) {
         assertEquals(expected, primeFactorial(inputNumber))
     }
 
     companion object {
         @JvmStatic
-        fun `provide test cases to primeFactorialTest`(): Stream<Arguments> =
+        fun `Provide test cases to primeFactorialTest`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(mutableListOf(-1), 0),
                         Arguments.of(mutableListOf(-1), 1),

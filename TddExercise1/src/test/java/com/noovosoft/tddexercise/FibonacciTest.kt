@@ -9,20 +9,20 @@ import kotlin.test.assertEquals
 internal class HelloTest {
 
     @ParameterizedTest
-    @MethodSource("provide input to fibonacciIterative test")
-    fun `give Input to Fibonacci function`(expected: Int, inputNumber: Int) {
+    @MethodSource("Provide input to fibonacciIterative test")
+    fun `Give Input to Fibonacci function`(expected: Int, inputNumber: Int) {
         assertEquals(expected, fibonacciIterative(inputNumber) )
     }
 
     @ParameterizedTest
-    @MethodSource("provide input to recursive fibonacci")
-    fun `input given to Fibonacci Recursive`(expected: Int, inputToFib: Int) {
+    @MethodSource("Provide input to recursive fibonacci")
+    fun `Input given to Fibonacci Recursive`(expected: Int, inputToFib: Int) {
         assertEquals(expected, fibonacciRecursive(inputToFib))
     }
 
     companion object {
         @JvmStatic
-        fun `provide input to fibonacciIterative test`(): Stream<Arguments> =
+        fun `Provide input to fibonacciIterative test`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(-1, 0),
                         Arguments.of(0, 1),
@@ -34,7 +34,7 @@ internal class HelloTest {
                 )
 
         @JvmStatic
-        fun `provide input to recursive fibonacci`(): Stream<Arguments> =
+        fun `Provide input to recursive fibonacci`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(0, 0),
                         Arguments.of(1, 1),

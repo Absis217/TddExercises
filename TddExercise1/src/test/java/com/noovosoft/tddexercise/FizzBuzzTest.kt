@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class FizzBuzzTest {
 
     @ParameterizedTest
-    @MethodSource("provide input to FizzBuzz function")
+    @MethodSource("Provide input to FizzBuzz function")
     fun `Input given to FizBuzz function`(expected: String, inputToFizzBuzz: Int) {
         assertEquals(expected, fizzBuzz(inputToFizzBuzz))
     }
 
     companion object {
         @JvmStatic
-        fun `provide input to FizzBuzz function`(): Stream<Arguments> =
+        fun `Provide input to FizzBuzz function`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of("FizzBuzz", 0),
                         Arguments.of("Fizz", 6),

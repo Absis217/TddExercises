@@ -9,14 +9,14 @@ import kotlin.test.assertEquals
 internal class FactorialTest {
 
     @ParameterizedTest
-    @MethodSource("provide arguments to factorial test case")
-    fun `factorial Of given Input`(expected: Int, testInputNumber: Int) {
+    @MethodSource("Provide arguments to factorial test case")
+    fun `Factorial Of given Input`(expected: Int, testInputNumber: Int) {
         assertEquals(expected, factorial(testInputNumber))
     }
 
     companion object {
         @JvmStatic
-        fun `provide arguments to factorial test case`(): Stream<Arguments> =
+        fun `Provide arguments to factorial test case`(): Stream<Arguments> =
                 Stream.of(
                         Arguments.of(-1, -5),
                         Arguments.of(-1, -87),
