@@ -7,15 +7,15 @@ fun fibonacciIterative(number: Int): Int {
     if (number == 1) {
         return 0
     }
-    var nextNumber = 1
-    var prevNumber = 0
-    var currentNumber = 1
+    var next = 1
+    var prev = 0
+    var current = 1
     for (i in 3..number) {
-        nextNumber = currentNumber + prevNumber
-        prevNumber = currentNumber
-        currentNumber = nextNumber
+        next = current + prev
+        prev = current
+        current = next
     }
-    return nextNumber
+    return next
 }
 
 fun fibonacciRecursive(number: Int): Int {

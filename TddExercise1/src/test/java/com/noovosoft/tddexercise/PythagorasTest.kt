@@ -21,6 +21,7 @@ internal class PythagorasTest {
                         Arguments.of(0.0, 0.0, 0.0),
                         Arguments.of(0.0, 0.0, 10.0),
                         Arguments.of(5.0, 3.0, 4.0),
+                        Arguments.of(0.0, -3.0, 4.0),
                         Arguments.of(8.57, 2.5, 8.2),
                         Arguments.of(2.83, 2.0, 2.0)
                 )
